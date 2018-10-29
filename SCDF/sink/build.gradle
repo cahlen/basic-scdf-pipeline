@@ -30,14 +30,13 @@ ext {
 }
 
 dependencies {
-    implementation('org.springframework.boot:spring-boot-starter-data-mongodb')
-    implementation('org.springframework.cloud:spring-cloud-stream')
-    implementation('org.springframework.cloud:spring-cloud-stream-binder-kafka')
-    implementation('org.springframework.kafka:spring-kafka')
+    compile('org.springframework.boot:spring-boot-starter-data-mongodb')
+    compile('org.springframework.cloud:spring-cloud-stream')
+    compile('org.springframework.cloud:spring-cloud-stream-binder-kafka')
     compileOnly('org.springframework.boot:spring-boot-configuration-processor')
-    testImplementation('org.springframework.boot:spring-boot-starter-test')
-    testImplementation('de.flapdoodle.embed:de.flapdoodle.embed.mongo')
-    testImplementation('org.springframework.cloud:spring-cloud-stream-test-support')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile('de.flapdoodle.embed:de.flapdoodle.embed.mongo')
+    testCompile('org.springframework.cloud:spring-cloud-stream-test-support')
 }
 
 dependencyManagement {
