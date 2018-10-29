@@ -52,7 +52,7 @@ services:
       - "8081:8081"
 
   scdf:
-    image: springcloud/spring-cloud-dataflow-server-local:1.6.0.RELEASE
+    image: springcloud/spring-cloud-dataflow-server-local:1.7.0.RELEASE
     container_name: scdf
     depends_on: [dns, postgres, config-server]
     dns: [172.19.0.2]
