@@ -106,9 +106,22 @@ services:
     networks:
       default:
         aliases: [mongo.localhost]
+    ports:
+    - "27017:27017"
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
+
+  mongo-config:
+    image: mongo
+    depends_on: [dns, mongo]
+    dns: [172.19.0.2]
+    networks:
+      default:
+        aliases: [mongo-config.localhost]
+    volumes:
+    - ./docker:/docker
+    command: docker/mongo/setup.sh
 
   mongo-express:
     image: mongo-express
