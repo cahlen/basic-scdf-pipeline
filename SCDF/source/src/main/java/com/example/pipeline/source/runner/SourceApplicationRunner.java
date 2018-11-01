@@ -35,14 +35,13 @@ public class SourceApplicationRunner {
             String[] values = line.replace("\"","").split(",");
             JSONObject jsonObject = new JSONObject();
             try {
-                jsonObject.put("latitude",Double.parseDouble(values[0]));
-                jsonObject.put("longitude", Double.parseDouble(values[1]));
+                jsonObject.put("latitude", Double.parseDouble(values[1]));
+                jsonObject.put("longitude",Double.parseDouble(values[0]));
                 jsonObject.put("storeName", values[2]);
                 jsonObject.put("address", values[3]);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            System.out.println(jsonObject.toString());
             source.output().send(new GenericMessage<>(jsonObject.toString()));
         }
         return null;
