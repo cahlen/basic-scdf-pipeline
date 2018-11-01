@@ -7,4 +7,4 @@ mongo --port 27017 \
     -p 'example' \
     --authenticationDatabase 'admin' \
     --host mongo.localhost \
-    --eval  "db.createCollection('test'); db.getSiblingDB('test').createUser({user:'testUser', pwd:'testPassword', roles:[{role:'readWrite',db:'test'}]});"
+    --eval  "db.createCollection('starbucks'); db.getSiblingDB('test').createUser({user:'testUser', pwd:'testPassword', roles:[{role:'readWrite',db:'test'}]});"
