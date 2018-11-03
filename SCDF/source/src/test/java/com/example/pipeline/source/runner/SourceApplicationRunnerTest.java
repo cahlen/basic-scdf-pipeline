@@ -23,7 +23,7 @@ public class SourceApplicationRunnerTest {
     private SourceApplicationRunner subject;
 
     private final String TEST_CSV = "-149.8935557,61.21759217,Starbucks - AK - Anchorage  00001,\"601 West Street_601 West 5th Avenue_Anchorage, Alaska 99501_907-277-2477\"";
-    private final String EXPECTED_RESULT = "{\"address\":\"601 West Street_601 West 5th Avenue_Anchorage\",\"latitude\":-149.8935557,\"storeName\":\"Starbucks - AK - Anchorage  00001\",\"longitude\":61.21759217}";
+    private final String EXPECTED_RESULT = "{\"address\":\"601 West Street_601 West 5th Avenue_Anchorage\",\"latitude\":61.21759217,\"storeName\":\"Starbucks - AK - Anchorage  00001\",\"longitude\":-149.8935557}";
 
     @Mock
     private Source mockSource;

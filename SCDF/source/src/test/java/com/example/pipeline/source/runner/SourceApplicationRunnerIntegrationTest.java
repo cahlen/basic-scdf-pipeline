@@ -30,7 +30,7 @@ public class SourceApplicationRunnerIntegrationTest {
     public void handle_givenFile_outputsMessages() {
         BlockingQueue<Message<?>> payloads = messageCollector.forChannel(source.output());
 
-        assertThat(payloads, MessageQueueMatcher.receivesPayloadThat(is("{\"address\":\"601 West Street_601 West 5th Avenue_Anchorage\",\"latitude\":-149.8935557,\"storeName\":\"Starbucks - AK - Anchorage  00001\",\"longitude\":61.21759217}")));
-        assertThat(payloads, MessageQueueMatcher.receivesPayloadThat(is("{\"address\":\"Carrs-Anchorage #1805_1650 W Northern Lights Blvd_Anchorage\",\"latitude\":-149.9054948,\"storeName\":\"Starbucks - AK - Anchorage  00002\",\"longitude\":61.19533942}")));
+        assertThat(payloads, MessageQueueMatcher.receivesPayloadThat(is("{\"address\":\"601 West Street_601 West 5th Avenue_Anchorage\",\"latitude\":61.21759217,\"storeName\":\"Starbucks - AK - Anchorage  00001\",\"longitude\":-149.8935557}")));
+        assertThat(payloads, MessageQueueMatcher.receivesPayloadThat(is("{\"address\":\"Carrs-Anchorage #1805_1650 W Northern Lights Blvd_Anchorage\",\"latitude\":61.19533942,\"storeName\":\"Starbucks - AK - Anchorage  00002\",\"longitude\":-149.9054948}")));
     }
 }
