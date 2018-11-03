@@ -61,6 +61,7 @@ services:
         aliases: [dataflow.localhost]
     ports:
       - "9393:9393"
+      - "9995-9998:9995-9998"
     volumes:
       - ~/.m2:/root/.m2
     environment:
