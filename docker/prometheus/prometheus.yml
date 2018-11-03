@@ -1,0 +1,34 @@
+global:
+  scrape_interval:     15s
+  evaluation_interval: 15s
+
+alerting:
+  alertmanagers:
+  - static_configs:
+    - targets:
+      # - alertmanager:9093
+
+rule_files:
+# - "first_rules.yml"
+# - "second_rules.yml"
+
+scrape_configs:
+- job_name: 'prometheus'
+  static_configs:
+  - targets: ['localhost:9090']
+- job_name: 'source'
+  metrics_path: '/actuator/prometheus'
+  static_configs:
+    - targets: ['dataflow.localhost:9995']
+- job_name: 'transform'
+  metrics_path: '/actuator/prometheus'
+  static_configs:
+    - targets: ['dataflow.localhost:9996']
+- job_name: 'haversine-transform'
+  metrics_path: '/actuator/prometheus'
+  static_configs:
+    - targets: ['dataflow.localhost:9997']
+- job_name: 'sink'
+  metrics_path: '/actuator/prometheus'
+  static_configs:
+    - targets: ['dataflow.localhost:9998']
