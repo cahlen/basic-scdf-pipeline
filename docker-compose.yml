@@ -142,8 +142,21 @@ services:
     image: prom/prometheus
     depends_on: [dns, scdf]
     dns: [172.19.0.2]
+    container_name: prometheus
     networks:
       default:
         aliases: [prometheus.localhost]
     ports:
       - "9090:9090"
+    volumes:
+    - ./docker/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+
+  grafana:
+    image: grafana/grafana
+    depends_on: [dns, prometheus]
+    dns: [172.19.0.2]
+    networks:
+      default:
+        aliases: [grafana.localhost]
+    ports:
+    - "3000:3000"
