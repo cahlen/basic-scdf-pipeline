@@ -8,6 +8,10 @@ curl -H "Accept: application/json" -X POST "http://localhost:9393/apps/processor
     -d "uri=maven://com.example.pipeline:transform:0.0.1-SNAPSHOT" \
     -d "force=true"
 
+curl -H "Accept: application/json" -X POST "http://localhost:9393/apps/processor/haversine-transform" -i \
+    -d "uri=maven://com.example.pipeline:haversine-transform:0.0.1-SNAPSHOT" \
+    -d "force=true"
+
 curl -H "Accept: application/json" -X POST "http://localhost:9393/apps/sink/sink" -i \
     -d "uri=maven://com.example.pipeline:sink:0.0.1-SNAPSHOT" \
     -d "force=true"
