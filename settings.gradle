@@ -1,3 +1,4 @@
 rootProject.name = 'basic-scdf-pipeline'
 include 'SCDF/source'
 include 'SCDF/transform'
+include 'SCDF/sink'
