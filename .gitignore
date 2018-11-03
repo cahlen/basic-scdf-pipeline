@@ -11,3 +11,4 @@
 *.ipr
 
 .envrc
+build.sh
