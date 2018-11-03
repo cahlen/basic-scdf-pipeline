@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        springBootVersion = '2.1.0.RELEASE'
+        springBootVersion = '2.0.6.RELEASE'
     }
     repositories {
         mavenCentral()
@@ -22,17 +22,17 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
-    maven { url "https://repo.spring.io/milestone" }
 }
 
 
 ext {
-    springCloudVersion = 'Greenwich.M1'
+    springCloudVersion = 'Finchley.SR2'
 }
 
 dependencies {
     compile('org.springframework.cloud:spring-cloud-stream')
     compile('org.springframework.cloud:spring-cloud-stream-binder-kafka')
+    compile('org.json:json:20180813')
     compileOnly('org.springframework.boot:spring-boot-configuration-processor')
     testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile('org.springframework.cloud:spring-cloud-stream-test-support')
