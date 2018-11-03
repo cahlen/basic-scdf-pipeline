@@ -1,11 +1,11 @@
 ### basic scdf pipeline
 
 #### What does it do?
-Right now the pipline simply reads a csv file full of starbucks locations in the United States.
-The source applications pushes these payloads to a transform application which uppercases the
-address and storeName values.  It then gets pushed to another transformer which uses a haversine 
+Right now the pipeline simply reads a csv file full of starbucks locations in the United States.
+The source application pushes these payloads to a transform application which uppercases the
+address and storeName values.  Payloads are then pushed to another transformer which uses a haversine 
 formula to filter payloads within a 30km radius from the center of manhattan.  Finally a sink
-applications pushes the resulting data to a mongodb.
+application pushes the resulting data into a mongodb.
 
 This pipeline is meant to be a simple example of creating a pipeline in Spring Cloud Data Flow.
 
