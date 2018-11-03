@@ -21,7 +21,14 @@ This pipeline is meant to be a simple example of creating a pipeline in Spring C
   cd basic-scdf-pipeline
   docker-compose up -d
   ```
-
+- Build each application and publish each artifact in your local maven repository
+  ```
+  (cd SCDF/source; ./gradlew clean build install)
+  (cd SCDF/transform; ./gradlew clean build install)
+  (cd SCDF/haversine-transform; ./gradlew clean build install)
+  (cd SCDF/sink; ./gradlew clean build install)
+  ```
+  
 - Register the applications using the following shell script so that
 you can create the stream (give it a few minutes to boot up the docker-compose environment)
   ```
