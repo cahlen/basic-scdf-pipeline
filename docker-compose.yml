@@ -93,10 +93,10 @@ services:
     ports:
       - "8888:8888"
     volumes:
-      - ~/workspace/clp-cloud-config:/root/clp-cloud-config
+      - ./cloud-config:/config
     environment:
-      - SPRING_CLOUD_CONFIG_SERVER_GIT_URI=file://root/clp-cloud-config/
-      - SPRING_CLOUD_CONFIG_SERVER_GIT_SEARCHPATHS=**/*
+      - SPRING_PROFILES_ACTIVE=native
+      - SPRING_CLOUD_CONFIG_SERVER_NATIVE_ADDLABELLOCATIONS=false
 
   mongo:
     image: mongo
