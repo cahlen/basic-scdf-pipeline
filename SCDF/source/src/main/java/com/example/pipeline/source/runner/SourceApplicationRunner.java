@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.messaging.Source;
 import org.springframework.integration.annotation.InboundChannelAdapter;
+import org.springframework.integration.annotation.Poller;
 import org.springframework.messaging.support.GenericMessage;
 import org.springframework.stereotype.Component;
 
@@ -27,7 +28,7 @@ public class SourceApplicationRunner {
         this.source = source;
     }
 
-    @InboundChannelAdapter(channel = Source.OUTPUT)
+    @InboundChannelAdapter(channel = Source.OUTPUT, poller = @Poller(fixedDelay = "100000000"))
     public String handle() throws IOException {
         BufferedReader br = fileBufferedReaderService.readFile();
         String line;
